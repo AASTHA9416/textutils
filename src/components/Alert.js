@@ -1,0 +1,23 @@
+import React from 'react';
+
+function Alert(props) {
+  const capitalize = (word) => {
+    const lower = word.toLowerCase();
+    return lower.charAt(0).toUpperCase() + lower.slice(1);
+  };
+
+  return (
+    <div>
+      {/* Conditionally render the alert only if props.alert is truthy */}
+      {props.alert && (
+        <div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+          <strong>{capitalize(props.alert.type)}</strong>: {props.alert.msg}
+          {/* <strong>Holy guacamole!</strong> You should check in on some of those fields below. */}
+          {/* <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> */}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default Alert;

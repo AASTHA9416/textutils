@@ -4,22 +4,29 @@ export default function Textform(props) {
     const handleUpClick=()=>{
         console.log("uppercase was clicked" + text);
         let newText=text.toUpperCase();
-        setText(newText)
+        setText(newText);
+        props.showAlert("converted to uppercase","success")
     }
     const handleLoClick=()=>{
         console.log("lowercase was clicked" + text);
         let newText=text.toLowerCase();
-        setText(newText)
+        setText(newText);
+        props.showAlert("converted to lowercase","success")
+
     }
     const handleCapClick=()=>{
         console.log("lowercase was clicked" + text);
         let newText='' ;
-        setText(newText)
+        setText(newText);
+        props.showAlert("deleted all text","success")
+
     }
     const handlestyClick=()=>{
         console.log("lowercase was clicked" + text);
         let newText= `<span style="font-style: italic;">${text}</span>`;
-        setText(newText)
+        setText(newText);
+        props.showAlert("style is chnaged","success")
+
     }
 
     const handleOnChange=(event)=>{
@@ -33,12 +40,16 @@ export default function Textform(props) {
         text.select();
         text.setSelectionRange(0,9999);
         navigator.clipboard.writeText(text.value);
+        props.showAlert("text is beng copied","success")
+
     }
     const handleExtraSpaces=()=>{
         console.log("on chnage");
         let newText=text.split(/[ ]+/);
 
         setText(newText.join(" "));
+        props.showAlert("extraspaces are removed","success")
+
     }
 
     

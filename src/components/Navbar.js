@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 
 export default function Navbar(props) {
 
@@ -15,10 +16,9 @@ export default function Navbar(props) {
           <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">{props.aboutText}</a>
-          </li>
-         
+          {/* <li className="nav-item">
+            <a className="nav-link" href="/about">{props.aboutText}</a>
+          </li> */}
         </ul>
         {/* <form className="d-flex" role="search">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
@@ -26,7 +26,15 @@ export default function Navbar(props) {
         </form> */}
       <div class={`form-check form-switch text-${props.mode==='light' ? 'black' :'white' }`}>
   <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toogleMode} />
-  <label class="form-check-label" for="flexSwitchCheckDefault ">Default switch checkbox input</label>
+  <label class="form-check-label" for="flexSwitchCheckDefault ">{props.mode==='light' ? 'Enable Dark Mode' :'Enable Light Mode'}</label>
+</div>
+<div class={`form-check form-switch text-${props.changeorange==='norange' ? 'black' :'orange' }`}>      
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.showOrange}/>
+  <label class="form-check-label" for="flexSwitchCheckDefault">{props.changeorange==='orange' ? 'Enable white' :'Enable orange'}</label>
+</div>
+<div class={`form-check form-switch text-${props.changepink==='npink' ? 'black' :'pink' }`}>
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.showPink}/>
+  <label class="form-check-label" for="flexSwitchCheckDefault">{props.changepink==='pink' ? 'Enable white' :'Enable pink'}</label>
 </div>
       </div>
     </div>
