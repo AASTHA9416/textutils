@@ -14,7 +14,7 @@ export default function Navbar(props) {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+            <Link className="nav-link " aria-current="page" to="/">Home</Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="/about">{props.aboutText}</a>
@@ -22,40 +22,11 @@ export default function Navbar(props) {
 
         </ul>
        
-        {/* <form className="d-flex" role="search">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-outline-success" type="submit">Search</button>
-        </form> */}
-        <div className="d-flex">
-          <div className="bg-primary rounded mx-2" style={{height:'30px',width:'30px', cursor:'pointer'}} onClick={()=>{props.toogleMode('primary')}} ></div>
-        </div> 
-        <div className="d-flex">
-          <div className="bg-success rounded mx-2" style={{height:'30px',width:'30px', cursor:'pointer'}} onClick={()=>{props.toogleMode('success')}}></div>
-        </div> 
-        <div className="d-flex">
-          <div className="bg-danger rounded mx-2" style={{height:'30px',width:'30px', cursor:'pointer'}} onClick={()=>{props.toogleMode('danger')}}></div>
-        </div> 
-        <div className="d-flex">
-          <div className="bg-warning rounded mx-2" style={{height:'30px',width:'30px', cursor:'pointer'}} onClick={()=>{props.toogleMode('warning')}}></div>
-        </div> 
-        <div className="d-flex">
-          <div className="bg-light rounded mx-2" style={{height:'30px',width:'30px', cursor:'pointer', border:'1px solid black'}} onClick={()=>{props.toogleMode('light')}}></div>
-        </div> 
-        <div className="d-flex">
-          <div className="bg-dark rounded mx-2" style={{height:'30px',width:'30px', cursor:'pointer' }} onClick={()=>{props.toogleMode('dark')}}></div>
-        </div> 
-      {/* <div className={`form-check form-switch text-${props.mode==='light' ? 'black' :'white' }`}>
+      <div className={`form-check form-switch text-${props.mode==='light' ? 'black' :'white' }`}>
   <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={()=>{props.toogleMode(null)}} />
-  <label className="form-check-label" for="flexSwitchCheckDefault ">Toogle Mode</label>
-</div> */}
-{/* <div className={`form-check form-switch text-${props.changeorange==='norange' ? 'black' :'orange' }`}>      
-  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.showOrange}/>
-  <label className="form-check-label" for="flexSwitchCheckDefault">{props.changeorange==='orange' ? 'Enable white' :'Enable orange'}</label>
+  <label className="form-check-label" for="flexSwitchCheckDefault ">{props.mode==='light'?'Enable Dark Mode':'Enable Light Mode'}</label>
 </div>
-<div className={`form-check form-switch text-${props.changepink==='npink' ? 'black' :'pink' }`}>
-  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.showPink}/>
-  <label className="form-check-label" for="flexSwitchCheckDefault">{props.changepink==='pink' ? 'Enable white' :'Enable pink'}</label>
-</div> */}
+
       </div>
     </div>
   </nav>

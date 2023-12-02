@@ -43,19 +43,10 @@ setTimeout(()=>{
 
 );
   }
- const removeBodyClasses=()=>{
-  document.body.classList.remove('bg-light');
-  document.body.classList.remove('bg-dark'); 
-  document.body.classList.remove('bg-success');
-  document.body.classList.remove('bg-primary');
-  document.body.classList.remove('bg-warning');
-  document.body.classList.remove('bg-danger');
- }
-    
-  const toogleMode = (cls) => {
-    removeBodyClasses();
-    console.log(cls);
-    document.body.classList.add('bg-'+cls);
+
+  const toogleMode = () => {
+  
+
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = '#2c2b3b';
