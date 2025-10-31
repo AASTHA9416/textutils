@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
-import About from './components/About'; // Ensure this matches your file name
+import About from './components/about';
 import Alert from './components/Alert';
 
 function App() {
