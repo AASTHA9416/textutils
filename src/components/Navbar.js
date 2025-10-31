@@ -25,7 +25,7 @@ export default function Navbar(props) {
               <Link className="nav-link" aria-current="page" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/about">{props.aboutText}</a>
+              <Link className="nav-link" to="/about">{props.aboutText}</Link>
             </li>
           </ul>
           <div className={`form-check form-switch text-${props.mode === 'light' ? 'black' : 'white'}`}>
@@ -34,7 +34,7 @@ export default function Navbar(props) {
               type="checkbox"
               role="switch"
               id="flexSwitchCheckDefault"
-              onClick={props.toggleMode} // Corrected here
+              onClick={props.toggleMode}
             />
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
               {props.mode === 'light' ? 'Enable Dark Mode' : 'Enable Light Mode'}
@@ -50,7 +50,7 @@ Navbar.propTypes = {
   title: PropTypes.string.isRequired,
   aboutText: PropTypes.string.isRequired,
   mode: PropTypes.string.isRequired,
-  toggleMode: PropTypes.func.isRequired, // Added prop type validation for toggleMode
+  toggleMode: PropTypes.func.isRequired,
 };
 
 Navbar.defaultProps = {

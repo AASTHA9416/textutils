@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from './components/about';
 import Alert from './components/Alert';
+import TextForm from './components/TextForm';
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -43,6 +44,9 @@ function App() {
 
       <div className="container my-3">
         <Switch>
+          <Route exact path="/">
+            <TextForm mode={mode} showAlert={showAlert} />
+          </Route>
           <Route path="/about">
             <About mode={mode} />
           </Route>
